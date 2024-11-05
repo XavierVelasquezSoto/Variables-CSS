@@ -26,4 +26,62 @@ ul {
 body {
   margin: 0;
   font-family: sans-serif;
+  min-height: 500vh;
+  background-color: var(--bg-color);
 }
+
+:root{
+  --color-rgb:rgb(119, 53, 53);
+  --color-hex:#3e5f85;
+  --color-text: white;
+  --bg-color: black;
+  --tracking: steelblue;
+  --box-width: 20px;
+  --box-height: 20px;
+  --lineRed-width: 20px;
+  --lineRed-height: 20px;
+}
+
+.lineRed{
+  position: fixed;
+  background-color: red;
+  width: var(--lineRed-width);
+  height: var(--lineRed-height);
+
+}
+
+.h1{
+  margin: 0;
+  top: 20px;
+  position: fixed;
+  background-color: none;
+  color: var(--color-text);
+  
+}
+
+.buttonRGB{
+  position: fixed;
+  width: 165px;
+  height: 22px;
+  top: 100px;
+  font-size: 12px;
+}
+
+.buttonHexa{
+  position: fixed;
+  width: 165px;
+  height: 22px;
+  top: 100px;
+  left: 200px;
+  font-size: 12px;
+}
+
+/* .trackingMouse{
+  position: fixed;
+  width: var(--box-width);
+  height: var(--box-height);
+  background-color: var(--tracking);
+
+} */
+
+/* position: fixed */
