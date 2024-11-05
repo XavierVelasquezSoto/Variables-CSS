@@ -77,31 +77,10 @@ document.addEventListener("mousemove", trackingMouse)
 
 document.addEventListener("scroll", test) */
 
-/* const updateLineRed = () => {
-    //scroll total - 100%
-    //scrollY - porcentaje de la barra
-
-     let scrollTotal = document.body.scrollHeight -100%
-    724 - x%
-
-     
-    let scrollResult = (0 * 6527) / document.body.scrollHeight
-    rootStyles.setProperty("--lineRed-width", scrollResult + px)
-    console.log(window.scrollY)
-    console.log(document.body.scrollHeight)
-}
- */
 
 /* 
 total scroll - 100%
 userScroll - ? (regla de 3) */
-
-
-
-
-
-
-
 
 
 /* const ev = (event) => {
