@@ -1,8 +1,7 @@
 const rootStyles = document.documentElement.style
-
 const lineRedElement = document.getElementById("lineRed")
-const h1Element = document.getElementById("h1")
 
+const h1Element = document.getElementById("h1")
 const buttonRGBElement = document.getElementById("buttonRGB")
 const buttonHexaElement = document.getElementById("buttonHexa")
 
@@ -10,18 +9,23 @@ const trackingElement = document.getElementById("trackingMouse")
 
 
 const updateLineRed = () => {
-    
-    rootStyles.setProperty("--lineRed-width", window.scrollY + "%")
-    rootStyles.setProperty("--lineRed-height",  window.scrollY + "%")     
-        
+    const totalScroll = document.body.scrollHeight - window.innerHeight;
+    const userScroll = Math.floor(window.scrollY);
+    const finalWidth = ( userScroll * 100 ) / totalScroll;
+
+   rootStyles.setProperty("--lineRed-width", finalWidth + "%")
+   
+   h1Element.textContent = `Te has desplazado ${userScroll} px` 
+   //se puede eliminar y añadir en la funcion de abajo, pero este caso para mover
 }
 
 
-const xTextMoved = () => {
+/* const xTextMoved = () => {
+    const userScroll = Math.floor(window.scrollY);
 
-    h1Element.textContent = `Te has desplazado ${window.scrollY} px`
-  
-}
+    h1Element.textContent = `Te has desplazado ${userScroll} px`
+    //En este caso es valido
+} */
 
 
 const bgColorRGB = () => {
@@ -36,6 +40,7 @@ const bgColorRGB = () => {
 
 const bgColorHexa = () => {
 
+    //const hexaCharacters = "0123456789ABCDEF"
     let hexa = ["a","b","c","d","e","f","0","1","2","3","4","5","6","7","8","9"]
     let hexaRandom = ""
 
@@ -47,44 +52,49 @@ const bgColorHexa = () => {
     rootStyles.setProperty("--bg-color", "#" + hexaRandom)
 }
 
-/* const tracking = () => {
-    trackingElement = trackingElement
-} */
 
-lineRedElement.addEventListener("scroll", updateLineRed)
-window.addEventListener("scroll", xTextMoved)
+
+
+const trackingMouse = event => {
+    rootStyles.setProperty("--position-x", event.x + "px")
+    rootStyles.setProperty("--position-y", event.y + "px")
+}
+
+document.addEventListener("scroll", updateLineRed)
+/* window.addEventListener("scroll", xTextMoved) */
 buttonRGBElement.addEventListener("click", bgColorRGB)
 buttonHexaElement.addEventListener("click", bgColorHexa)
-/* trackingElement.addEventListener("mousemove", tracking) */
+document.addEventListener("mousemove", trackingMouse)
 
 
 
 
 
-/* const xScroll = () => {
-    let resultDimension = ""
+/* const test = () => {
+    console.log(window.scrollY)
+    console.log(document.body.scrollHeight)
+}
 
-    if ( xScroll === 0)
-        {
-            resultDimension = document.body.scrollHeight * 0
-        }
-        else if ( xScroll === 100 )
-            {
-               resultDimension = (100 * document.body.scrollHeight) / window.innerHeight
-            }
+document.addEventListener("scroll", test) */
 
-            lineRedElement.textContent = resultDimension
+/* const updateLineRed = () => {
+    //scroll total - 100%
+    //scrollY - porcentaje de la barra
 
-} */
+     let scrollTotal = document.body.scrollHeight -100%
+    724 - x%
 
+     
+    let scrollResult = (0 * 6527) / document.body.scrollHeight
+    rootStyles.setProperty("--lineRed-width", scrollResult + px)
+    console.log(window.scrollY)
+    console.log(document.body.scrollHeight)
+}
+ */
 
-
-
-
-
-
-
-
+/* 
+total scroll - 100%
+userScroll - ? (regla de 3) */
 
 
 

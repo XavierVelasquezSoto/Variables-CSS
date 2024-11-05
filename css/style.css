@@ -26,7 +26,7 @@ ul {
 body {
   margin: 0;
   font-family: sans-serif;
-  min-height: 500vh;
+  min-height: var(--min-height);
   background-color: var(--bg-color);
 }
 
@@ -38,8 +38,11 @@ body {
   --tracking: steelblue;
   --box-width: 20px;
   --box-height: 20px;
-  --lineRed-width: 20px;
+  --lineRed-width: 0px;
   --lineRed-height: 20px;
+  --min-height: 500vh;
+  --position-x: 0;
+  --position-y: 0;
 }
 
 .lineRed{
@@ -76,12 +79,16 @@ body {
   font-size: 12px;
 }
 
-/* .trackingMouse{
+.trackingMouse{
   position: fixed;
-  width: var(--box-width);
-  height: var(--box-height);
-  background-color: var(--tracking);
+  width: 30px;
+  height: 30px;
+  background-color: orange;
+  top: var(--position-y);
+  left: var(--position-x);
+  pointer-events: none;
 
-} */
+}
 
 /* position: fixed */
+/* pointer-events: none; */
