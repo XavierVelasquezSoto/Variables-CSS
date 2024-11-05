@@ -25,13 +25,26 @@ const xTextMoved = () => {
 
 
 const bgColorRGB = () => {
-    let rgb = "rgb(180, 50, 64)"
-    const randomRGB = Math.floor(Math.random() * rgb)
-    rootStyles.setProperty("--bg-color", randomRGB + px)
+
+    let r = Math.floor(Math.random() * 255)
+    let g = Math.floor(Math.random() * 255)
+    let b = Math.floor(Math.random() * 255)
+
+    rootStyles.setProperty("--bg-color", "rgb"+ "(" + r +"," + g +"," + b +")")
 }
+
+
 const bgColorHexa = () => {
-    const randomHexa = Math.floor(Math.random() * bgColorHexa)   
-    rootStyles.setProperty("--bg-color", randomHexa)
+
+    let hexa = ["a","b","c","d","e","f","0","1","2","3","4","5","6","7","8","9"]
+    let hexaRandom = ""
+
+        for ( let i = 0; i < 6; i++ )
+            {
+                hexaRandom += hexa[Math.floor(Math.random() * hexa.length)]
+            }      
+
+    rootStyles.setProperty("--bg-color", "#" + hexaRandom)
 }
 
 /* const tracking = () => {
