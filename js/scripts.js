@@ -16,7 +16,7 @@ const updateLineRed = () => {
    rootStyles.setProperty("--lineRed-width", finalWidth + "%")
    
    h1Element.textContent = `Te has desplazado ${userScroll} px` 
-   //se puede eliminar y añadir en la funcion de abajo, pero este caso para mover
+   //se puede eliminar y añadir en la funcion de abajo, pero este caso para mover crea conflicto y mejor unirlo que tenerlo separado
 }
 
 
